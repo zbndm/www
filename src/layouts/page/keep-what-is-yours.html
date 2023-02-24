@@ -1,0 +1,492 @@
+{{ define "main" }}
+  <!-- Hero Section -->
+
+<!-- Styling for this landing page only -->
+
+
+<script>
+    document.getElementById("lp-text").innerHTML = "Developers Authenticated";
+  </script>
+
+  <style>
+
+    #cta-text{
+      display:none;
+    }
+
+    #lp-text{
+      margin-left: 10px;
+    }
+
+    .ms-3{
+      margin:0px !important;
+    }
+
+    @media only screen and (min-width: 600px) {
+      .prompt{
+        font-family: 'Prompt', sans-serif !important;
+        font-size: 12rem;
+        line-height: 10.2rem;
+      }
+
+      .prompt_btn{
+        left: 57%;
+        position: absolute;
+        display:inline !important;
+        margin-top: -70px !important;
+      }
+
+      .boiler{
+        width: 30%;
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+        .prompt{
+          font-family: 'Prompt', sans-serif !important;
+          font-size: 6rem !important;
+          line-height: 5.1rem !important;
+        }
+
+        .prompt_btn{
+          margin-top: 20px;
+        }
+    }
+
+    @media only screen and (max-width: 992px) and (min-width: 576px)  {
+
+      #keep-btn-top{
+        width:75%;
+      }
+
+      #keep-btn-bottom{
+        width:49%;
+      }
+
+      .whitepaper-btn-right{
+        width: 49%;
+      }
+
+      .boiler{
+        width:75%;
+      }
+
+      .whitepaper-syne-btn,
+      .discord-syne-btn{
+        width:100%;
+      }
+
+    }
+
+  </style>
+
+  <img id="tea-steam-dark-1" src="/Images/tea-steam-dark-1.svg" alt="">
+  <img id="tea-steam-dark-2" src="/Images/tea-steam-dark-2.svg" alt="">
+  <div class="container pt-5 pb-5">
+    <div class="row">
+      <div class="col" style="z-index:100;">
+        <h1 class="prompt yellow">KEEP <br>WHAT IS <br>YOURS.<a class="btn btn-primary auth-btn mb-3 mt-5 ms-lg-5 ms-md-0 ms-sm-0 ms-0" id="keep-btn-top" style="font-family:var(--bs-body-font-family)!important; vertical-align:bottom;" href="https://github.com/login/oauth/authorize?client_id=9d1f1a72f1300b6991df&state=teaxyz" role="button">Authenticate with GitHub</a></h1>
+        <p style="color:#b3c8c8;" class="mt-5 mb-5 lead">Equitable Open-Source for web3</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col" style="z-index:100;">
+        <h2 class="display-3">Over 10 thousand developers have authenticated their Github with tea. This is your chance to be an early member of our Communitea.</h2>
+        <div class="row">
+          <div class="col-lg-6 p-0">
+            <a style="border: 2px solid #54BAAB;" class="btn btn-primary auth-btn mb-3 mt-4" id="keep-btn-bottom" href="https://github.com/login/oauth/authorize?client_id=9d1f1a72f1300b6991df&state=teaxyz" role="button">Authenticate with GitHub</a>
+            <a class="btn btn-primary mt-lg-4 mt-md-4 mt-sm-0 mt-0 whitepaper-btn-right" id="whitepaper-btn" href="/white-paper/"
+              role="button" style="background:transparent; float:right;">Read Our White Paper</a>
+          </div>
+        </div>
+        <p class="small boiler">Limited numbers of tea beta invites will be given to the first devs who authenticate their Github account. So don’t delay, get it while it’s hot.</p>
+      </div>
+    </div>
+
+    <!-- Start email subscribe form -->
+
+    <div class="row">
+      <div class="col mt-5">
+        <h3 class="mb-4 display-6">Stay up to date with all the latest tea news</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-7">
+        {{- partial "klaviyo-form.html" . -}}
+      </div>
+    </div>
+
+<!-- Start three column value props -->
+
+<style>
+
+   .syne-col{
+     z-index:100;
+   }
+
+   .syne-hr{
+     border-top: 1px solid white;
+     opacity: 100;
+   }
+
+@media only screen and (min-width: 600px) {
+   .syne-btn{
+     border: 2px solid #DDFC76;
+     font-size: 20px;
+     width: 400px;
+     color: #DDFC76;
+     background: transparent !important;
+     display: block;
+     margin-left:auto;
+     margin-right:auto;
+   }
+
+   .syne-btn:hover{
+     border: 2px solid #DDFC76;
+     background: #DDFC76 !important;
+     color:black;
+   }
+
+   .syne-boiler{
+     width: 50%;
+     display: block;
+     margin-left:auto;
+     margin-right:auto;
+   }
+}
+
+@media only screen and (max-width: 600px) {
+   .syne-btn{
+     border: 2px solid #DDFC76;
+     font-size: 20px;
+     color: #DDFC76;
+     background: transparent !important;
+     display: block;
+     margin-left:auto;
+     margin-right:auto;
+   }
+
+   .syne-btn:hover{
+     border: 2px solid #DDFC76;
+     background: #DDFC76 !important;
+     color:black;
+   }
+
+   .syne-boiler{
+     width: 100%;
+     display: block;
+     margin-left:auto;
+     margin-right:auto;
+   }
+}
+
+   .syne-badge {
+     background-color: #DDFC76 !important;
+     color: black;
+   }
+
+ </style>
+
+    <div class="row">
+
+     <div class="col-lg-4 col-md-4 col-sm-12 col-12 syne-col pt-5 pb-3" style="display:flex; flex-direction:column;">
+       <hr class="syne-hr">
+       <h3 class="mb-4">We’re calling on all open‐source devs to authenticate their Github with tea.</h3>
+       <a class="btn btn-primary mb-sm-0 mb-md-5 mb-0 whitepaper-syne-btn" id="whitepaper-btn" href="/white-paper/"
+         role="button" style="background:transparent;">Read Our White Paper</a>
+       <hr class="syne-hr d-none d-lg-block" style="margin-top:auto;">
+     </div>
+
+     <div class="col-lg-4 col-md-4 col-sm-12 col-12 syne-col pt-5 pb-3" style="display:flex; flex-direction:column;">
+       <hr class="syne-hr">
+       <h3>Join early to be entitled to a variety of rewards.</h3>
+       <hr class="syne-hr d-none d-lg-block" style="margin-top:auto;">
+     </div>
+
+     <div class="col-lg-4 col-md-4 col-sm-12 col-12 syne-col pt-5 pb-3">
+       <hr class="syne-hr">
+       <h3 class="mb-4">Join our discord, where you can talk to our team on the regular and ask anything.</h3>
+       <a class="btn btn-primary mb-sm-0 mb-md-5 mb-0 discord-syne-btn" id="whitepaper-btn" href="https://discord.gg/KCZsXfJphn"
+         role="button" style="background:transparent;">Join our Discord</a>
+       <hr class="syne-hr d-none d-lg-block">
+     </div>
+
+   </div>
+  </div>
+
+  <!-- Mission Statement -->
+  <img id="tea-steam-1" src="/Images/tea-steam-1.svg" alt="">
+  <img id="tea-steam-2" src="/Images/tea-steam-2.svg" alt="">
+  <div class="row mission pb-5 pt-5">
+    <div class="container pb-5 pt-5">
+      <div class="row">
+        <div class="col">
+          <h2 class="charcoal display-4" style="text-align:center;">The tools you need to keep on building.</h2>
+          <p class="charcoal lead" style="text-align:center;">Like its predecessor, brew, tea is the base of the
+            developer stack–seated beneath the tools that build the internet. Unlike its predecessor, tea leverages
+            blockchain and web3 technology to eliminate anonymity and deliver compensation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Web2 -->
+  <div class="container mb-5 mt-5 web2-container" id="why-tea">
+    <div class="row">
+      <div class="col-lg-6 col-md-12 col-sm-12 col-12 my-auto mb-5">
+        <p class="mb-5">WEB2</p>
+        <h3 class="mb-4 display-4">Thankless <span class="yellow">tech giants profit</span> from the generosity of
+          open&#8208;source developers.</h3>
+        <p class="mb-4">For more than twenty years the Internet has been built upon the fruits of freely available
+          open&hyphen;source. Whenever a project enabled new functionality it was (whether desired or not) added as a
+          new brick in the tower of infrastructure; giving the Internet new powers and capabilities; becoming a new
+          foundation for all the innovations that followed. The maintainers of these new bricks became thanklessly
+          unpaid volunteers.</p>
+        <hr class="mb-4">
+        <h4><img src="/Images/no-compensation.svg" alt="no compensation icon" class="feature-icon me-2"> No Compensation
+        </h4>
+        <p class="mb-4 ps-5">Developers contribute innovations (bricks) to the tower of infrastructure that serves as a
+          feeding ground for big tech. Their efforts are capitalized on, yet they see none of that profit.</p>
+        <hr class="mb-4">
+        <h4><img src="/Images/centralized.svg" alt="centralized icon" class="feature-icon me-2"> Centralized</h4>
+        <p class="mb-4 ps-5">Entire stacks are left at the mercy of single, proprietary vendors who control their
+          composition and deployment. This turns the “tower of bricks” into a game of Jenga.</p>
+        <hr class="mb-4">
+        <h4><img src="/Images/obligation_maintain.svg" alt="obligation icon" class="feature-icon me-2"> Obligation to
+          Maintain</h4>
+        <p class="ps-5">Open&hyphen;source authors are pressured by their peers and the community at large to
+          continuously maintain and update their contributions... again, without pay or gratitude.</p>
+      </div>
+      <div class="col-lg-6 col-sm-12 col-md-6 col-12 mx-auto web2-col my-auto">
+        <img class="web2-tower" style="display:block; margin-left:auto; margin-right:auto;" src="/Images/web2-tower.svg"
+          alt="">
+      </div>
+    </div>
+  </div>
+
+  <!-- Web3 -->
+  <div class="container web3-container">
+    <div class="row">
+      <div class="col order-lg-1 order-sm-2 order-2">
+        <img class="mt-5 web3-tower" src="/Images/web-3-towerAsset-2.svg" alt="">
+      </div>
+      <div class="col-lg-6 col-sm-12 my-auto order-lg-2 order-sm-1 order-1">
+        <p class="mb-5">WEB3</p>
+        <h3 class="mb-4 display-4">Blockchain <span class="yellow">empowers developers</span> to contribute to
+          open&#8208;source while <span class="yellow">reaping overdue benefits</span>.</h3>
+        <p class="mb-4">The problem has always existed, but the technology to solve it hasn’t. tea facilitates the graph
+          of open source that underpins all modern digital infrastructure. We’re putting it on‐chain creating a map
+          we’ll use to guide value redistribution to the open source that makes the Internet possible.
+          We’re not changing how open source works—it’s still free. web3 has introduced powerful new paradigms that
+          allow value to be compensated without direct payment. Creator economy, meet open source.</p>
+        <hr class="mb-4">
+        <h4><img src="/Images/token_rewards.svg" alt="token rewards icon" class="me-2"> Token Rewards</h4>
+        <p class="mb-4 ps-5">Through tea, open&hyphen;source contributors are rewarded with our flagship token relative
+          to aggregate usage and sweat equity. Now, devs are able to monetize their generosity. </p>
+        <hr class="mb-4">
+        <h4><img src="/Images/decentralized.svg" alt="tea.xyz is decentralized" class="me-2"> De-Centralized</h4>
+        <p class="mb-4 ps-5">web3 turns the “Jenga” game back into a tower of stable bricks. By putting everything
+          on-chain, we’re ensuring that entire stacks will no longer sit at the mercy of sole developers.</p>
+        <hr class="mb-4">
+        <h4><img src="/Images/transferrable.svg" alt="tea.xyz is transferrable" class="me-2"> Transferrable</h4>
+        <p class="ps-5">Devs are not obligated to dedicate years to maintaining a single project. Instead, they can
+          transfer ownership to another interested party and move on to creating something else. </p>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Features & Benefits -->
+  <div class="container mb-5 mt-5" id="features">
+    <div class="row">
+      <div class="col mb-5">
+        <h2 class="display-4" style="text-align:center;">What makes it <span class="yellow">great</span>?</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-4 mb-4">
+        <div class="card mb-4">
+          <div class="card-body p-4">
+            <img src="/Images/cross-platform.svg" alt="" class="mb-3">
+            <h4 class="mb-4">Cross Platform Compatible</h4>
+            <p>Wherever you develop, wherever your CI/CD runs, however you deploy your app, tea is there. We abstract
+              this detail away so you can get on with the work that matters to you.<br><br>
+
+              <code class="language-javascript">$ sh &lt;(curl tea.xyz) ci</code><br><br>
+
+              Your README, blog post or internal install instructions can all use the same, simple one‐liner.<br><br>
+
+              <code class="language-javascript">$ sh &lt;(curl tea.xyz) install deno.land</code><br><br>
+
+              Here, our one‐liner installs deno to ./bin/deno. If tea is installed it integrates with that installation,
+              if not the script just exits; tea itself is not installed either way. We’re happy to be just the
+              transmission layer.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body p-4">
+            <img src="/Images/delightful-dev.svg" alt="" class="mb-3">
+            <h4 class="mb-4">Delightful DevExperience</h4>
+            <p>tea is built with a “it just works” philosophy. It’s our job to set you up for success and then get out
+              of your way so you can work as effectively as possible. Development is hard enough without the toolset
+              being a source of pain as well.</p>
+
+            <p>Much like its predecessor, brew, tea is full of delightful touches. You’ll have to try it and see.</p>
+
+            <p>Of course delightful also means fast. You’ve got plenty to do and need tools that respect your time.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-12 col-sm-12 col-md-12 col-lg-4">
+        <div class="card mb-4">
+          <div class="card-body p-4">
+            <img src="/Images/designed-teams.svg" alt="" class="mb-3">
+            <h4 class="mb-4">Designed for tea’ms</h4>
+            <p>Good developers create. Great developers collaborate.</p>
+
+            <p>You don’t work alone and neither should the tool that sits at the root of your stack. We’re designing tea
+              to be super great for teams.</p>
+
+            <p>tea sets your stack up right and makes working with it a delight so you and your team can focus on
+              building what matters.</p>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-body p-4">
+            <img src="/Images/decentralized-secure.svg" alt="" class="mb-3">
+            <h4 class="mb-4">Decentralized &amp; Secure</h4>
+            <p>tea’s decentralization offers tangible benefits to ecosystem security. Every layer of your apps and dapps
+              is signed and verified on‐chain. Users can rest assured that the software they are using is what all its
+              creators intended.</p>
+
+            <p>In day to day development our decentralization increases reliability (leftpad is a sore memory) and gives
+              developers the flexibility they need to turn inspiration into empires; when a single proprietary vendor
+              controls how your stack is composed and deployed your stack is centralized and under their control.</p>
+
+            <p>We’re also saying goodbye to centralization at the installation layer. Say hello to native, built‐in
+              “version management”† for every tool in your stack and goodbye to dependency hell.</p>
+
+            <i style="color:#B7C7C7;">† similar to tools like rbenv, nvm or Python’s virtualenv.</i></p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-12 col-sm-12 col-md-12 col-lg-4">
+        <div class="card mb-4">
+          <div class="card-body p-4">
+            <img src="/Images/open-governance.svg" alt="" class="mb-3">
+            <h4 class="mb-4">Open Governance</h4>
+            <p>We believe the open source community needs to direct and control the ecosystem we will help launch. The
+              DAO will be an open, transparent and evolving governance structure where the depth of your contributions
+              will matter more than the depth of your pocket.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body p-4">
+            <img src="/Images/help-build.svg" alt="" class="mb-3">
+            <h4 class="mb-4">Want to Help Us Build It?</h4>
+            <p>Join the team that is both fixing how open source is funded and creating the tools that will accelerate
+              its creation for the benefit of all humanity.</p>
+
+            <p>Max Howell, our CEO, created brew. He’s a self‐taught developer, yet has written software used by tens of
+              millions of people. He doesn’t care if you know how to invert a binary tree. If you have a passion for
+              changing the world and have built some cool stuff then why not <a
+                style="color:#8EC7BF; text-decoration:none;" href="mailto:hello@tea.xyz"><strong>email us</strong></a>
+              and speak for what job you have in mind?</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Partners -->
+
+  <div class="container partners mt-5 mb-5">
+    <div class="row">
+      <div class="col mb-5">
+        <h3 style="text-align:center;" class="display-5">What’s a revolution without <span class="yellow">powerful
+            allies?</span></h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-sm-12 col-lg-12 my-auto">
+        <a href="https://www.binance.com/en/blog/ecosystem/binance-labs-leads-$8-million-seed-funding-round-for-tea-421499824684903608"
+          style="cursor:pointer;"><img id="binance" class="partner-img" src="/Images/binance.svg"
+            alt="Proud of Binance"></a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Community Links -->
+  <div class="row community-container pt-5 pb-5 mt-5 mb-5">
+    <div class="container p-4" id="community">
+      <div class="row">
+        <div class="col">
+          <h3 style="text-align:center;" class="mb-5 display-5">Join the Community</h3>
+        </div>
+
+      </div>
+      <div class="row">
+
+        <div class="col-6 col-sm-6 col-lg">
+          <a href="https://discord.gg/KCZsXfJphn">
+            <div class="com-card mb-4">
+              <img src="/Images/discord.svg" alt="" class="community-icon">
+            </div>
+          </a>
+        </div>
+
+        <div class="col-6 col-sm-6 col-lg">
+          <a href="https://twitter.com/teaxyz_">
+            <div class="com-card mb-4">
+              <img src="/Images/twitter.svg" alt="" class="community-icon">
+            </div>
+          </a>
+        </div>
+
+        <div class="col-6 col-sm-6 col-lg">
+          <a href="https://github.com/teaxyz">
+            <div class="com-card mb-4">
+              <img src="/Images/github.svg" alt="" class="community-icon">
+            </div>
+          </a>
+        </div>
+
+        <div class="col-6 col-sm-6 col-lg">
+          <a href="https://t.me/tea_xyz">
+            <div class="com-card mb-4">
+              <img src="/Images/telegram.svg" alt="" class="community-icon">
+            </div>
+          </a>
+        </div>
+
+        <div class="col-6 col-sm-6 col-lg align-self-center">
+          <a href="https://reddit.com/r/teaxyz">
+            <div class="com-card mb-4">
+              <img src="/Images/reddit.svg" alt="" class="community-icon">
+            </div>
+          </a>
+        </div>
+
+        <div class="col-6 col-sm-6 col-lg align-self-center">
+          <a href="#">
+            <div class="com-card mb-4">
+              <img src="/Images/instagram-iconAsset 1.svg" alt="" class="community-icon">
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+{{ end }}

@@ -1,0 +1,41 @@
+verbose = true
+no-progress = true
+scheme = []
+base = "./public"
+exclude-mail = true
+include = ["./public/**/*.md", "./public/**/*.html"]
+exclude = [
+  "https://github.com/",
+  "https://twitter.com/",
+  "https://fonts.gstatic.com/",
+  "https://fonts.googleapis.com/",
+  "https://www.clarity.ms/tag/",
+  "https://www.googletagmanager.com/gtm.js",
+  ".*/mailto:.*@.*",
+  "https://tea.xyz/tea.white-paper",                                                              # fragment used in js
+  "https://tea.xyz/tea.products",
+  "https://tea.xyz/tea.nebraska-man",
+  "https://tea.xyz/tea.cli",
+  "https://github.com/teaxyz/pantry",
+  "https://tea.xyz/tea.authentication-success",
+  "https://tea.xyz/tea.email-subscribe",
+  "https://www.google.com/thank-you",
+  "file:///home/runner/work/www/www/public/tea.white-paper.pdf",
+  "file:///home/runner/work/www/www/public/manage.kmail-lists.com/subscriptions/subscribe",
+  "file:///home/runner/work/www/www/public/www.klaviyo.com/media/js/public/klaviyo_subscribe.js",
+  "https://openssl.org/",
+  "https://twitter.com/teaxyz_",
+  "file:///home/runner/work/www/www/public/+github.com/rhash/RHash",
+  "file:///home/runner/work/www/www/public/+github.com/rhash/RHash",
+  "https://app.tea.xyz/api/signups",                                                              # can take a little too long, and no reason to hammer here.
+  "https://unicode.org/",
+  "https://gnome.org/",
+  "https://libuv.org/",
+  "file:///home/runner/work/www/www/public/blog",
+  "https://api.github.com/repos/",
+  "https://oracle.com/",
+  "https://lz4.org/",
+  "https://radicle.org/",
+  "https://rigaux.org/",
+  "https://nushell.sh/",
+]

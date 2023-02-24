@@ -1,0 +1,271 @@
+{{ define "main" }}
+
+<!-- Uncomment to enable site preloader:
+
+{{- partial "preloader.html" -}}
+
+-->
+
+<!-- Hero Section -->
+
+{{- partial "mobile-art-home" -}}
+
+<section class="hero-section">
+  <div class="container hero-container">
+    <div class="row">
+      <div class="col">
+        <h1 class="impact" style="z-index:3; position: relative;">the next&#8208;generation, cross&#8208;platform <span class="white">package manager</span></h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+        <div class="lead-text-container animated-25 animatedFadeInUp fadeInUp black-bg p-4" style="z-index:3; position: relative;">
+          <p class="lead" style="margin-bottom: 0px;"><a href="https://github.com/teaxyz/cli">Visit GitHub</a> to check out our README, and &#9734; the repository. You can install tea by running the one&#8208;liner in your terminal.</p>
+        </div>
+        {{- partial "purple-btn-large.html" -}}
+        <img class="mobile-grid-element mt-5" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
+      </div>
+    </div>
+  </div>
+</section>
+  <div class="full-width-cta-container">
+   {{- partial "clipboard-copy.html" . -}}
+  </div>
+  <div class="hero-bottom flex align-content-middle">
+    {{- partial "additional-install-methods.html" -}}
+  </div>
+
+<!-- Teal Impact Section -->
+
+<section class="teal-bg impact-section two-boxes">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="box">
+          <div>
+            <h2 class="black text-center" style="z-index:2;">equitable open-source<br>for&nbsp;<br id="impact-break"><span class="cycle">web3</span></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+
+  .box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .box div {
+
+  }
+
+</style>
+<!-- Package Section: Before -->
+
+<section class="package-before-section ">
+  <div class="container package_before">
+    <div class="row one-box">
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+        <h2 style="margin-bottom: 1vw;">The unified packaging infrastructure.</h2>
+        <p class="lead">Access the latest tools, languages and frameworks seamlessly across all platforms with tea&#8212;the standalone, binary download from the creator of brew. Unleash the power of the open-source ecosystem by <a href="https://github.com/teaxyz/setup/blob/main/install.sh">installing tea</a> today.</p>
+        <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
+        <div class="gen-art-mobile" id="m-gen-art-1"></div>
+        <div class="gen-art-mobile" id="m-gen-art-2"></div>
+      </div>
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Package Grid -->
+
+<!-- Desktop/Tablet Package Display -->
+
+  <span class="grid-package-display">
+    {{- partial "package-grid.html" . -}}
+  </span>
+
+<!-- Mobile Package Display -->
+
+  <span class="swiper-package-display">
+    {{- partial "swiper.html" . -}}
+  </span>
+
+<!-- Style for Swiper -->
+
+<style>
+  .swiper-package-display{
+    display:block;
+  }
+  .grid-package-display{
+    display:none;
+  }
+  @media only screen and (min-width: 576px) {
+
+      .grid-package-display{
+        display:block;
+      }
+
+      .swiper-package-display{
+        display:none;
+      }
+  }
+</style>
+
+<!-- Bottle CTA -->
+
+<hr>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+
+        <div class="one-box-down">
+          <h4 class="text-center">Check out which versions we have bottled</h4>
+          <p class="text-center">We&#39;ve compiled a list of every package that&#39;s been bottled, along with their corresponding versions.</p>
+        </div>
+        <a href="/bottles/">
+            <button class="detail-btn-large bottle-cta"><i class="icon-enter-arrow"></i>VIEW ALL BOTTLES</button>
+        </a>
+
+        <style>
+
+          .bottle-cta{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+        </style>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+<!-- Package CTA Section
+  <section class="package-cta-section" id="authenticate">
+      <div class="container package-cta-container one-box">
+        <div class="row one-box-down one-box-up">
+          <div class="col-lg-9">
+            <h3>Authenticate your GitHub for an even bigger sip</h3>
+            <p class="lead">Using tea without authenticating is like playing a video game without the DLC. There’s so much more to our ecosystem than a command line interface, and we want you to be a part of it.</p>
+          </div>
+        </div>
+        <hr>
+        <div class="row one-box-up">
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 one-box-down">
+            <i class="icon-pattern-random-21 teal display-6"></i>
+            <h5>Map out the Tea’cosystem</h5>
+            <p>The more people authenticate, the clearer picture we have on just how strong the pot of tea we’re brewing is. We’ll be able to see just how many newcomers and bona-fide OSS veterans have enlisted for the revolution.</p>
+            <img class="mobile-grid-element" src="/Images/mobile-grid-element-one-row.svg" alt="grid">
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 one-box-down">
+            <i class="icon-pattern-random-15 teal display-6"></i>
+            <h5>Get Recognized</h5>
+            <p>Authenticating your GitHub enables us to quantify and reward the contributions <em>you’ve already made</em> to the Open-Source Community</p>
+            <img class="mobile-grid-element" src="/Images/mobile-grid-element-one-row.svg" alt="grid">
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 one-box-down">
+            <i class="icon-pattern-random-19 teal display-6"></i>
+            <h5>NFT Reward Badges</h5>
+            <p>Authenticating your GitHub entitles you to unique NFT reward badges, including one with rare artwork specific to how soon you authenticate.</p>
+            <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
+          </div>
+        </div>
+      </div>
+  </section>
+{{- partial "full-width-cta.html" . -}}
+
+-->
+
+<!-- Statistics -->
+
+<section class="statistics" style="padding-top: 8.371vw !important; padding-bottom: 8.371vw !important;">
+
+<!-- Generative Art for the statistics section -->
+
+<div class="gen-art" id="gen-art-5"></div>
+<div class="gen-art" id="gen-art-6"></div>
+<div class="gen-art" id="gen-art-7"></div>
+<div class="gen-art" id="gen-art-8"></div>
+<div class="gen-art" id="gen-art-9"></div>
+
+<!-- End generative art -->
+
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+        <h2>sta'tea'stics</h2>
+        <p class="lead">Much like its predecessor, <a href="https://brew.sh/">brew</a>, tea is seeing a rapid rate of adoption. Developers around the world are doing amazing things with our next&#8208;generation, cross&#8208;platform package manager.</p>
+        <p>In true open&#8208;source fashion, we&#39;re asking the community for <a href="https://github.com/teaxyz/cli">contributions to tea/cli</a>, as well as packaging assistance in an effort to add the web&#39;s top 300 packages to <a href="https://github.com/teaxyz/pantry.zero#contributing">our pantry</a>. Now is the time to be an early contributor in what will inevitably become the foundation of the future internet.</p><br>
+        <!-- Commenting this out until more data is available. Everything can fit on the homepage as of now.
+        {{- partial "detail-btn-large.html" "#" -}}
+        -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="metric-block" style="float:right; margin-top:-300px;">
+          <p class="stat-head">NUMBER OF REPOS</p>
+          <p class="stat-number teal" id="stat-one"></p>
+          <p class="gray stat-small-text">Number of rated repos owned by tea&#8208;authenticated developers.</p>
+        </div>
+        <div class="gen-art-mobile" id="m-gen-art-3"></div>
+        <div class="gen-art-mobile" id="m-gen-art-4"></div>
+        <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
+        <div class="metric-block mb-5 mt-4">
+          <p class="stat-head">AUTHENTICATED DEVS</p>
+          <p class="stat-number teal"><span id="count2"></span></p>
+          <p class="gray stat-small-text">This is the number of OSS developers who have chosen to join the battle for the future of the internet.</p>
+        </div>
+        <div class="gen-art-mobile" id="m-gen-art-5"></div>
+        <div class="gen-art-mobile" id="m-gen-art-6"></div>
+        <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
+        <div class="metric-block" style="float:right;">
+          <p class="stat-head">TEA MAINTAINERS</p>
+          <p class="stat-number teal" id="stat-two"></p>
+          <p class="gray stat-small-text">Number of tea-maintainers for those <span id="stat-one-small"></span> repos.</p>
+        </div>
+        <div class="gen-art-mobile" id="m-gen-art-7"></div>
+        <div class="gen-art-mobile" id="m-gen-art-8"></div>
+        <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
+      </div>
+    </div>
+  </div>
+</section>
+<div class="full-width-cta-container">
+ {{- partial "clipboard-copy.html" . -}}
+</div>
+
+<!-- partners
+<section class="partners">
+  <div class="gen-art" id="gen-art-10"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12" style="position:relative; z-index: 2; margin-top: 20px;">
+        <h2>partners</h2>
+        <p>At our core, tea is about building an open-source ecosystem that is fair for everyone. This is an enormous undertaking and we can’t do it alone. Here we want to thank those that have already enlisted for the Open-Source Revolution.</p>
+      </div>
+      <div class="col">
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <img class="partner-logo" id="binance-logo" src="/Images/binance-logo-white.svg" alt="Binance Logo" style="width:37.757vw; margin-top:1.116vw; z-index:2; position:relative;">
+        <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid" style="margin-top: -2.8vw;">
+        <div class="gen-art-mobile" id="m-gen-art-9"></div>
+      </div>
+    </div>
+  </div>
+</section>
+-->
+{{ end }}

@@ -1,0 +1,51 @@
+{{ define "main" }}
+
+<div class="container email-subscribe-container">
+  <div class="row">
+    <div class="col my-auto">
+      <div class="email-div p-4" style="
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width:50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);">
+        <p class="text-center teal" style="text-transform: uppercase;">Wait... Before you authenticate</p>
+        <h1 class="display-4 text-center">Stay Up-to-Date</h1>
+        <p class="lead text-center mb-5">Don't worry, we won't blow up your inbox. We just want to keep you posted on the future of the internet–you know... small things like that.</p>
+        {{- partial "klaviyo-form.html" . -}}
+        <p class="small teal text-center">We will never share or sell your personal information. You can read more about our <a href="/privacy-policy/">privacy standards here.</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+
+  .email-subscribe-container{
+    height:100vh;
+    position: relative;
+    background-image: url("/Images/tea-steam-dark.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  @media only screen and (max-width: 720px) {
+    .email-div{
+      width: 100% !important;
+    }
+
+  }
+
+</style>
+
+<script type="text/javascript">
+ KlaviyoSubscribe.attachToForms('#email_signup', {
+   hide_form_on_success: true,
+   success_url: "https://www.google.com/thank-you"
+ });
+</script>
+
+{{ end }}

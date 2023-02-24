@@ -1,0 +1,43 @@
+<div class="offcanvas black-bg offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">MENU</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+
+      <ul class="navbar-nav ms-auto me-4 my-auto">
+        {{ range .Site.Menus.main }}
+        <li class="nav-item mt-lg-0 mt-md-0 mt-sm-3 mt-3">
+          <a class="top-nav-link nav-link{{ if $.IsMenuCurrent "main" . }} active" aria-current="page {{ end }}" href="{{ .URL }}">{{ .Name}}</a>
+        </li>
+        {{ end }}
+      </ul>
+
+  </div>
+</div>
+
+<style>
+
+  @media only screen and (max-width: 992px) {
+
+    .offcanvas{
+      border-left: 2px solid #949494;
+    }
+
+    .offcanvas-title{
+      font-size: 3vw;
+    }
+
+    a.top-nav-link{
+      color: #00ffd0!important;
+      font-size: 6vw;
+      text-align: right;
+    }
+
+    .btn-close{
+      color: white !important;
+    }
+
+  }
+
+</style>

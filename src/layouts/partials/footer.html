@@ -1,0 +1,203 @@
+<hr>
+<div id="myData"></div>
+
+<section class="footer" id="community">
+  <div class="container">
+      <div class="row footer-top one-box-down">
+        <div class="col-lg-8 footer-content">
+          <h4>the next-generation, cross‐platform package manager</h4>
+          <p>tea.cli is a delightful package manager that gets out of your way and sets you up for a joyful development process. <a class="teal" href="#">You can install it today</a>. <!--Our web3 protocol will create an OSS ecosystem that is safer for all users, and fair for all maintainers. Read our <a class="teal" href="#">white paper</a> here.--></p>
+          <img class="footer-grid" src="/Images/footer-grid-element.svg" alt="tea.grid">
+          <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
+        </div>
+        <div class="col-lg-4">
+          <div class="card social-box" style="width: 100%; float:right;">
+            <ul class="list-group list-group-flush">
+              <a class="list-group-item" role="button" href="https://twitter.com/teaxyz"><i class="icon-twitter social-icon"></i>Twitter</a>
+              <a class="list-group-item" role="button" href="https://discord.gg/KCZsXfJphn"><i class="icon-discord social-icon"></i>Discord</a>
+              <a class="list-group-item" role="button" href="https://github.com/teaxyz/cli"><i class="icon-github social-icon"></i>GitHub <span style="font-size:16px;">(&#9734;<span class="stargazers"></span>, <span class="release"></span>)</span></a>
+              <a class="list-group-item" role="button" href="https://t.me/tea_xyz"><i class="icon-telegram social-icon"></i>Telegram</a>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-4">
+        <h4 class="mb-4">sign up for tea'mails</h4>
+          <div class="col">
+            {{- partial "klaviyo-form.html" -}}
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <p class="small">©<span id="copyYear"></span> tea inc. You can also share our <a href="https://linktr.ee/teaxyz" class="teal">Linktree</a>.</p>
+        </div>
+        <div class="col-lg-6">
+          {{- partial "footer-nav.html" . -}}
+        </div>
+      </div>
+  </div>
+</section>
+
+<script>
+
+  const copyrightDate = new Date().getFullYear();
+  document.getElementById('copyYear').innerHTML = copyrightDate;
+
+</script>
+
+
+<!-- JavaScript Bundle with Popper -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <script>
+    $(window).scroll(function () {
+      $('nav').toggleClass('scrolled', $(this).scrollTop() > 100);
+    });
+
+    if (localStorage['signup'].match(/:::/)) {
+      const [username, serial_] = localStorage.signup.split(':::');
+      const serial = (+serial_).toLocaleString()
+      $('.box-auth-true').show();
+      $('.box-auth-false').hide();
+      $('#auth-username').html(username);
+      $('#count').html(`${serial} / <span id='count3'></span>`);
+      $('#count-sub-text').html('YOUR AUTHENTICATION NUMBER');
+      $('#communitea').html('Thanks for joining our communi&#39;<span style="color:#54BAAB;">tea</span>');
+      $('#revolution-text').html(
+        'Now stay tuned! As an early authenticator, you’ll be entitled to a variety of exciting rewards, including minted NFT certificates.'
+      );
+      $('#auth-body-text').hide();
+      $('.rounded-pill').hide();
+      $('.auth-btn').html('Configure GitHub App');
+      $('.auth-btn').attr('href', 'https://github.com/apps/tea-xyz')
+    }
+  </script>
+
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "c9ohlhyxzf");
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q3M5LVH76F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-Q3M5LVH76F');
+  </script>
+
+  <script>
+    const textList = [
+    "game&#8208;dev",
+    "AI",
+    "automation",
+    "data",
+    "ML",
+    "web",
+    "devops",
+    "creating",
+    "everything",
+    "<i>you<i>"
+    ];
+    const cycle = document.querySelector(".cycle","#cycle");
+    let i = 0;
+    const cycleText = () => {
+      cycle.innerHTML = textList[i];
+      i = ++i % textList.length;
+    };
+    cycleText();
+    setInterval(cycleText, 2400);
+
+  </script>
+
+  <script>
+    rdt('track', 'SignUp');
+    rdt('track', 'ViewContent');
+  </script>
+
+  <script>
+
+    const url = 'https://tea.breezy.hr/json?verbose=true';
+
+    fetch(url)
+    .then(res => res.json())
+    .then((out) => {
+      //Debugging + Reference
+      console.log(out);
+      //Job Description One
+      document.getElementById('typeOne').innerHTML = out[0].type.name;
+      document.getElementById('deptOne').innerHTML = out[0].department;
+      out[0].location.is_remote === true ? document.getElementById('locOne').innerHTML = 'Remote' : document.getElementById('locOne').innerHTML = out[0].location.name;
+      document.getElementById('jobOne').innerHTML = out[0].name;
+      document.getElementById('descOne').innerHTML = out[0].description;
+      document.getElementById('linkOne').href = out[0].url;
+      document.getElementById('typeTwo').innerHTML = out[1].type.name;
+      document.getElementById('deptTwo').innerHTML = out[1].department;
+      document.getElementById('jobTwo').innerHTML = out[1].name;
+      document.getElementById('descTwo').innerHTML = out[1].description;
+      out[1].location.is_remote === true ? document.getElementById('locTwo').innerHTML = 'Remote' : document.getElementById('locTwo').innerHTML = out[1].location.name;
+      document.getElementById('linkTwo').href = out[1].url;
+      document.getElementById('jobThree').innerHTML = out[2].name;
+      document.getElementById('typeThree').innerHTML = out[2].type.name;
+      document.getElementById('deptThree').innerHTML = out[2].department;
+      out[2].location.is_remote === true ? document.getElementById('locThree').innerHTML = 'Remote' : document.getElementById('locThree').innerHTML = out[2].location.name;
+      document.getElementById('descThree').innerHTML = out[2].description;
+      document.getElementById('linkThree').href = out[2].url;
+    })
+    .catch(err => { throw err });
+
+  </script>
+
+  <script>
+
+
+    const toastTrigger = document.getElementById('liveToastBtn')
+    const toastLiveExample = document.getElementById('liveToast')
+    if (toastTrigger) {
+      toastTrigger.addEventListener('click', () => {
+        const toast = new bootstrap.Toast(toastLiveExample)
+
+        toast.show()
+      })
+    }
+
+  </script>
+
+  <script>
+      $(document).ready(function() {
+        var repository = "teaxyz/cli";
+        var url = "https://api.github.com/repos/" + repository;
+
+        $.get(url, function(data) {
+          var stargazers = numeral(data.stargazers_count).format("0.0a");
+          $(".stargazers").html(stargazers);
+        });
+      });
+</script>
+
+<script>
+
+    $(document).ready(function() {
+      var repository = "teaxyz/cli";
+      var url = "https://api.github.com/repos/"+ repository +"/releases/latest";
+
+      $.get(url, function(data) {
+        var release = data.tag_name;
+        $(".release").html(release);
+      });
+    });
+
+</script>

@@ -1,0 +1,158 @@
+{{ define "main" }}
+
+{{- partial "white-paper-gen-art.html" -}}
+
+<!-- Hero Section -->
+<div class="section two-boxes wp-hero-section">
+  <div class="container">
+    <div class="row">
+      <div class="col" style="position: relative; z-index: 2;">
+        <h1>White Paper</h1>
+        <div class="wp-lead-text-container animated-5 animatedFadeInUp fadeInUp p-4 black-bg">
+          <p class="lead" style="margin-bottom: 0px;">Open‐source is about the many coming together to create something great. In the spirit of that, we’re inviting developers, speculators, and enthusiasts alike to contribute to our white paper and help brew the future of the internet. This is our revolutionary undertaking to create equitable open‐source for web3, and we want you to be a part of laying its groundwork.</p>
+        </div>
+        <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>
+  <div class="row button-container">
+    <a href="/tea.white-paper.pdf" role="button" class="btn btn-primary split-btn" id="nav-cta"><i class="icon-enter-arrow"></i>DOWNLOAD WHITEPAPER</a>
+    <a href="https://github.com/teaxyz/white-paper" role="button" class="btn btn-primary split-btn split-right" id="nav-cta"><i class="icon-enter-arrow"></i>CONTRIBUTE ON GITHUB</a>
+  </div>
+<hr>
+
+<style>
+  .split-btn{
+    display: inline-block;
+    width: 50%;
+  }
+
+  .split-right{
+    border-left: 0px !important;
+  }
+
+</style>
+
+
+<section class="one-box">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h4>Our white paper is available in multiple languages</h4>
+        <p>Thanks to the tea community's generosity and time, our white paper is available in several world languages. Select your preferred language from the dropdown menu.</p>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle languages" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Choose a Language
+          </button>
+          <ul class="dropdown-menu" id="language-selector"></ul>
+        </div>
+          <img class="mobile-grid-element" src="/Images/mobile-grid-element-3-rows.svg" alt="grid">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container" style="padding-top: 0px !important;">
+    <div class="row">
+      <div class="col">
+        <div id="adobe-dc-view" style="width: 100%;"></div>
+        <script src="https://documentservices.adobe.com/view-sdk/viewer.js"></script>
+        <script type="text/javascript">
+          const versions = [
+            ['English', ''],
+            ['Bahasa Indonesia', '_id'],
+            ['беларускі', '_be'],
+            ['български', '_bg'],
+            ['Deutsch', '_de'],
+            ['Русский', '_ru'],
+            ['українська', '_uk'],
+            ['简体中文', '_zh']
+          ];
+
+          let adobeDcView;
+
+          const getAdobeDcView = () => {
+            if (!adobeDcView) {
+              adobeDCView = new AdobeDC.View({
+                clientId: "1bc8ce732a184ccdade4f74f81375401",
+                divId: "adobe-dc-view"
+              });
+            }
+            return adobeDCView;
+          }
+
+          const getWhitePaperUrl = (suffix = '') => {
+            return 'https://tea.xyz/tea.white-paper' + suffix + '.pdf';
+          }
+
+          document.addEventListener("adobe_dc_view_sdk.ready", function(){
+            //Must change clientId before final merge
+            try {
+              for (const lang of versions) {
+                $('#language-selector').append("<li><a class=\"dropdown-item\" onclick=\"viewWhitepaper(\'" + lang[1] + "')\">" + lang[0] + "</a></li>");
+              }
+              const adobeDCView = getAdobeDcView();
+
+              const hash = window.location.hash.replace(/^#/, '_')
+              const suffix = versions.find(v => v[1] === hash) || ''
+              viewWhitepaper(suffix)
+            } catch (error) {
+              console.error('test:', error);
+            }
+          });
+
+          function viewWhitepaper(suffix) {
+            if (suffix.length) {
+              window.location.hash = '#' + suffix.substr(1)
+            } else{
+              // https://stackoverflow.com/questions/1397329/how-to-remove-the-hash-from-window-location-url-with-javascript-without-page-r/5298684#5298684
+              history.pushState("", document.title, window.location.pathname + window.location.search)
+            }
+            const adobeDCView = getAdobeDcView();
+            const url = getWhitePaperUrl(suffix);
+            adobeDCView.previewFile({
+              content:{
+                location: { url }
+              },
+              metaData:{
+                fileName: "tea.white-paper.pdf"
+              }
+            }, { embedMode: "IN_LINE" });
+            // document.getElementById('mobile-wp-download').setAttribute('href', url);
+          }
+        </script>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Start PDF
+
+  <div class="container pdf-iframe"
+    style="margin-bottom:100px; overflow:auto; -webkit-overflow-scrolling:touch; z-index:2;">
+    <iframe id="wp-iframe"src="https://tea.xyz/tea.white-paper.pdf#toolbar=0&navpanes=0&view=fitH" width="100%" height="800px">
+    </iframe>
+  </div>
+
+  <div class="container mobile-pdf" style="margin-bottom:100px;">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div style="display:flex; flex-direction:column; background-color:#23282C;" class="card-body pt-5 pb-5">
+            <div style="margin-top:auto; margin-bottom:auto;">
+              <p class="text-center">Mobile browsers can be finicky, so please view our white paper via the button
+                below.</p>
+              <a id="mobile-wp-download" style="display:block; margin-left:auto; margin-right:auto;" class="btn btn-primary mb-3"
+                href="https://tea.xyz/tea.white-paper.pdf" role="button">Download our White Paper</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>-->
+
+{{ end }}
